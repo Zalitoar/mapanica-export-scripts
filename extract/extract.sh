@@ -7,11 +7,11 @@
 #
 
 echo ""
-echo "EXTRACT MANAGUA PUBLIC TRANSPORT INFO SCRIPT"
+echo "EXTRACT BUENOS AIRES PUBLIC TRANSPORT INFO SCRIPT"
 echo ""
 
 # Download data from OSM
-./download.sh managua
+./download.sh buenos_aires
 
 # Prepare postgres database
 ./postgis.sh

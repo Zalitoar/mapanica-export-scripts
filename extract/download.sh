@@ -6,14 +6,14 @@
 #
 
 # Ensure valid input.
-if [ "$1" != "managua" ]; then
-  echo -e "Please specify 'managua'."
+if [ "$1" != "buenos_aires" ]; then
+  echo -e "Please specify 'buenos_aires'."
   exit
 fi
 
-if [ "$1" = "managua" ]; then
-  echo -e "Downloading basic OSM map for Managua from OpenStreetMap"
-  wget -O export/managua.osm --post-file=definitions/managua-overpass-query.ql "http://overpass-api.de/api/interpreter"
+if [ "$1" = "buenos_aires" ]; then
+  echo -e "Downloading basic OSM map for Buenos Aires Metropolitan Area and La Plata from OpenStreetMap"
+  wget -O export/buenos_aires.osm --post-file=definitions/buenos_aires-overpass-query.ql "http://overpass-api.de/api/interpreter"
 fi
 
 exit

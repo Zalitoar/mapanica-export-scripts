@@ -8,18 +8,18 @@ function preparedb {
   echo "Preparing Postgres database"
 
   # Prepare postgres DB
-  psql -U postgres -h localhost -c "drop database osm_managua;"
-  psql -U postgres -h localhost -c "create database osm_managua;"
-  psql -U postgres -h localhost -d osm_managua -c "CREATE EXTENSION hstore;"
-  psql -U postgres -h localhost -d osm_managua -f /usr/share/postgresql/9.4/contrib/postgis-2.2/postgis.sql
-  psql -U postgres -h localhost -d osm_managua -f /usr/share/postgresql/9.4/contrib/postgis-2.2/spatial_ref_sys.sql
+  psql -U postgres -h localhost -c "drop database osm_buenos_aires;"
+  psql -U postgres -h localhost -c "create database osm_buenos_aires;"
+  psql -U postgres -h localhost -d osm_buenos_aires -c "CREATE EXTENSION hstore;"
+  psql -U postgres -h localhost -d osm_buenos_aires -f /usr/share/postgresql/9.4/contrib/postgis-2.1/postgis.sql
+  psql -U postgres -h localhost -d osm_buenos_aires -f /usr/share/postgresql/9.4/contrib/postgis-2.1/spatial_ref_sys.sql
 }
 
 function import {
 
   echo ""
   echo "Import downloaded geo info into postgres DB"
-  osm2pgsql -sG --hstore --style definitions/osm2pgsql.style  -d osm_managua -H localhost -U postgres export/managua.osm
+  osm2pgsql -sG --hstore --style definitions/osm2pgsql.style  -d osm_buenos_aires -H localhost -U postgres export/buenos_aires.osm
 
   if [ "$1" = "init" ]; then
 

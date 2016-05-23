@@ -5,7 +5,7 @@ con = None
 def connect():
     global con
 
-    con = ogr.Open("PG: host=localhost dbname=osm_managua user=postgres")
+    con = ogr.Open("PG: host=localhost dbname=osm_buenos_aires user=postgres")
     if con is None:
       print 'Could not open a database or GDAL is not correctly installed!'
 
