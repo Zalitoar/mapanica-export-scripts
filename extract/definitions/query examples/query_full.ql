@@ -21,7 +21,7 @@ out meta;
   .c;
   relation
     [route=bus]
-    [network=IRTRAMMA]
+    [network=Nacional]
     (12.058838,-86.374855,12.185720,-86.145515);
   way(r);
   node(w);
